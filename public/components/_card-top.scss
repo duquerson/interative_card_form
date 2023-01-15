@@ -1,0 +1,66 @@
+
+
+.card_top{
+    background-image: url('../images/bg-main-mobile.png');
+    height: 240px;
+    color: $primary-white;
+    margin-bottom: 90px;
+}
+.cards_img{
+    position: relative;
+}
+.logo-card{
+    width: 56px;
+    height: 31px;
+    position: absolute;
+    top: 128px;
+    left: 32px;
+    z-index: 2;
+}
+figcaption img{
+    width: 288px;
+    height: 159px;
+}
+.card_top-front img{
+    position: absolute;
+    top: 112px;
+    left: 14px;
+    border-radius: 8px;
+    box-shadow: 0px 23px 44px -9px rgba(0,0,0,0.57);
+    z-index: 1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.card_top-back img{
+    position: absolute;
+    top: 16px;
+    right: 14px;
+}
+
+.cards_text span:nth-child(4){
+    position: relative;
+    left: 27px;
+    top: 61px;
+}
+.cards_text span:nth-child(3){
+    position: relative;
+    left: 58px;
+    top: 200px;
+    z-index: 3;
+}
+.cards_text span:nth-child(2){
+    position: relative;
+    left: 35px;
+    top: 200px;
+    z-index: 3;
+}
+.cards_text h1:nth-child(1){
+    position: relative;
+    left: 50px;
+    top: 183px;
+    font-size: $size;
+    z-index: 3;
+}
+

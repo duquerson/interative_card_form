@@ -4,48 +4,56 @@
     <title>Frontend Mentor | Interactive card details form</title>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <main class="container">
-      <section class="card_top">
-        <div class="cards_img">
-          <figcaption class="card_top-front">
-            <img src="./public/images/bg-card-front.png" alt="card-front">
-          </figcaption>
-          <figcaption class="card_top-back">
-            <img src="./public/images/bg-card-back.png" alt="card-back">
-          </figcaption>
+      <section class="container__card--top">
+        <div class="card">
+          <figure class="card__logo">
+            <img src="./public/card-logo.svg" alt="logo-card">
+            <figcaption>
+              0000 0000 0000 0000
+            </figcaption>
+          </figure>
+          <div class="card__details">
+            <h1 class="card__details--name">Jane Appleseed</h1>
+            <h2>
+              <span class="card__month">00</span><span class="card__year">00</span>
+            </h2>
+          </div>
         </div>
-        <div class="cards_text">
-          <h1>0000 0000 0000 0000</h1>
-          <span>Jane Appleseed</span>
-          <span>00/00</span>
-          <span>000</span>
+        <div class="card__back">
+          <h3 class="card__back--cvc">000</h3>
         </div>
       </section>
-      <section class="card_buttom">
-        <form>
-          Cardholder Name
-          e.g. Jane Appleseed
-
-          Card Number
-          e.g. 1234 5678 9123 0000
-
-          Exp. Date (MM/YY)
-          MM
-          YY
-
-          CVC
-          e.g. 123
-
-          Confirm
+      <section class="container__card--bottom">
+        <form class="form">
+          <label class="form__label" for="cardholder">Cardholder Name</label>
+          <input class="form__input" type="text" name="cardholder" id="cardholder" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
+          <label class="form__label" for="cardnumber">Card Number</label>
+          <input class="form__input" type="text" name="cardnumber" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
+          <div class="form__date--cvc">
+            <label class="form__label" for="cardmonth">Exp. Date (MM/YY)</label>
+            <label class="form__label" for="cardcvc">CVC</label>
+            <div class="form__date">
+              <input class="form__input" type="text" maxlength="2" name="cardmonth" id="cardmonth" placeholder="MM" autocomplete="bday-month" required>
+              <input class="form__input" type="text" maxlength="2" name="cardyear" id="cardyear" placeholder="YY" autocomplete="bday-year" required>
+              <input class="form__input" type="text" maxlength="3" name="cardcvc" id="cardcvc" placeholder="e.g. 123" autocomplete="cc-number" required>
+            </div>
+          </div>
+          <button class="form__submit">
+            Confirm
+          </button>
         </form>
-        <div class="completed">
-          <h2>Thank you!</h2>
-          <p>We've added your card details</p>
-          <button>Continue</button>
-        </div>
+        <section class="completed">
+          <img class="completed__img" src="./public/icon-complete.svg" alt="complete icon">
+          <h2 class="completed__title">Thank you!</h2>
+          <p class="completed__mjs">We've added your card details</p>
+          <button class="completed_button">Continue</button>
+        </section>
       </section>
     </main>
     <script type="module" src="/main.js"></script>

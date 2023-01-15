@@ -1,0 +1,103 @@
+
+.card_buttom{
+    font-size: $size;
+}
+
+form{
+    padding: 0 12px;
+    color: $primary-very;
+}
+
+form label{
+    color: $primary-very;
+}
+
+form label:nth-child(1){
+    display: block;
+    text-align: left;
+}
+
+form label:nth-child(3){
+    display: block;
+    text-align: left;
+}
+form label:nth-child(5){
+    display: inline-block;
+    text-align: left;
+}
+form label:nth-child(6){
+    display: inline-block;
+    text-align: left;
+}
+.form-name{
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    height: 38px;
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 6px;
+    border-color: $primary-light;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.form-name::placeholder{
+    color: $primary-light;
+}
+
+.form-number{
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    height: 38px;
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 6px;
+    border-color: $primary-light;
+}
+.form-number::placeholder{
+    color: $primary-light;
+}
+.form-mes{
+    flex-direction: row;
+    width: 20%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    height: 38px;
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 6px;
+    border-color: $primary-light;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.form-year{
+    
+    width: 20%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    height: 38px;
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 6px;
+    border-color: $primary-light;
+}
+.form-cvc{
+    
+    width: 50%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    height: 38px;
+    padding: 6px;
+    border: 1px solid;
+    border-radius: 6px;
+    border-color: $primary-light;
+}
+
+
