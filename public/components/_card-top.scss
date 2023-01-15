@@ -1,66 +1,82 @@
+@use './global' as *;
 
-
-.card_top{
-    background-image: url('../images/bg-main-mobile.png');
-    height: 240px;
-    color: $primary-white;
-    margin-bottom: 90px;
-}
-.cards_img{
-    position: relative;
-}
-.logo-card{
-    width: 56px;
-    height: 31px;
-    position: absolute;
-    top: 128px;
-    left: 32px;
-    z-index: 2;
-}
-figcaption img{
+.card{
     width: 288px;
-    height: 159px;
-}
-.card_top-front img{
+    height: 160px;
+    color: $primary-white;
+    padding: 20px;
+    background: url('../images/bg-card-front.png') no-repeat; 
+    background-size: contain;
     position: absolute;
-    top: 112px;
-    left: 14px;
-    border-radius: 8px;
-    box-shadow: 0px 23px 44px -9px rgba(0,0,0,0.57);
+    top: 126px;
+    left: 18px;
+    @media (min-width: 1440px) {
+        width: 450px;
+        height: 247px;
+        padding: 30px;
+        top: 187px;
+        left: 167px;
+    }
     z-index: 1;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-}
-.card_top-back img{
-    position: absolute;
-    top: 16px;
-    right: 14px;
+    letter-spacing: 2px;
+    &__logo{
+        width: 55px;
+        margin-bottom: 30px;
+    }
+    &__number{
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+    &__details{
+        display: flex;
+        font-size: 0.5em;
+        justify-content: space-between;
+        text-transform: uppercase;
+    }
+    @media (min-width: 1440px) {
+        &__logo{
+            width: 86px;
+            margin-bottom: 55px;
+        }
+        &__number{
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+        &__details{
+            font-size: 0.8em;
+        }
+    }
 }
 
-.cards_text span:nth-child(4){
-    position: relative;
-    left: 27px;
-    top: 61px;
+.card__back{
+    width: 288px;
+    height: 160px;
+    color: $primary-white;
+    padding: 20px;
+    background: url('../images/bg-card-back.png') no-repeat; 
+    background-size: contain;
+    position: absolute;
+    top: 30px;
+    left: 75px;
+    @media (min-width: 1440px) {
+        width: 450px;
+        height: 247px;
+        padding: 30px;
+        top: 468px;
+        left: 257px;
+    }
+    letter-spacing: 2px;
+    &--cvc{
+        font-size: 0.7em;
+        margin-top: 50px;
+        text-align: right;
+        padding-right: 10px;
+        @media (min-width: 1440px) {
+            font-size: 1em;
+            margin-top: 80px;
+            padding-right: 30px;
+        }
+    }
 }
-.cards_text span:nth-child(3){
-    position: relative;
-    left: 58px;
-    top: 200px;
-    z-index: 3;
-}
-.cards_text span:nth-child(2){
-    position: relative;
-    left: 35px;
-    top: 200px;
-    z-index: 3;
-}
-.cards_text h1:nth-child(1){
-    position: relative;
-    left: 50px;
-    top: 183px;
-    font-size: $size;
-    z-index: 3;
-}
+
 
