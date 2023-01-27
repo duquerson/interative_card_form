@@ -1,53 +1,16 @@
-
-$fuente: 'Space Grotesk';
-$size: 18px; 
-$primary-red: hsl(0, 100%, 66%);
-$primary-white: hsl(0, 0%, 100%);
-$primary-light-grayish: hsl(270, 3%, 87%);
-$primary-dark-grayish: hsl(279, 6%, 55%);
-$primary-very-dark: hsl(278, 68%, 11%);
-$primary-lineal-gradient-blue: hsl(249, 99%, 64%);
-$primary-lineal-gradient-purple: hsl(278, 94%, 30%);
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --font-main: Plus Jakarta Sans, sans-serif;
+    --font-size: 1.8rem;
+    --color-red: hsl(0, 100%, 66%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-grayish: hsl(270, 3%, 87%);
+    --color-dark-grayish: hsl(279, 6%, 55%);
+    --color-very-dark: hsl(278, 68%, 11%);
+    --color-lineal-gradient-blue: hsl(249, 99%, 64%);
+    --color-lineal-gradient-purple: hsl(278, 94%, 30%);
 }
 
-body{
-    font-size: $size;
-    font-family: $fuente;    
+@font-face {
+    font-family: Plus Jakarta Sans, sans-serif;
+    src: url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf'), url('../fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf') format('truetype');
 }
-
-.container{
-    width: 375px;
-    margin: auto;
-    &__card--top{
-        background: url('../images/bg-main-mobile.png') no-repeat;
-        height: 240px;
-        position: relative;
-    }
-    &__card--buttom{
-        padding: 90px 24px 45px;
-    }
-    @media (min-width: 1440px) {
-        width: 1440px;
-        display: flex;
-        &__card--top{
-            background: url('../images/bg-main-desktop.png') no-repeat;
-            height: 900px;
-            width: 900px;
-        }
-        
-    }
-}
-
-    
-
-
-
-
-
-
-

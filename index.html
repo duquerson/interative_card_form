@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Frontend Mentor | Interactive card details form</title>
-    <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <main class="container">
       <section class="container__card--top">
-        <div class="card">
-          <figure class="card__logo">
-            <img src="./public/card-logo.svg" alt="logo-card">
+        <div class="card__front">
+          <figure class="card__front--logo">
+            <img src="./card-logo.svg" alt="logo-card">
           </figure>
-          <p class="card__number">0000 0000 0000 0000</p>
-          <div class="card__details">
+          <p class="card__front--number">0000 0000 0000 0000</p>
+          <div class="card__front--details">
             <h1 class="card__details--name">Jane Appleseed</h1>
             <h2>
               <span class="card__month">00</span>/<span class="card__year">00</span>
@@ -29,25 +29,33 @@
       </section>
       <section class="container__card--buttom">
         <form class="form">
-          <label class="form__label" for="cardholder">Cardholder Name</label>
-          <input class="form__input" type="text" name="cardholder" id="cardholder" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
-          <label class="form__label" for="cardnumber">Card Number</label>
-          <input class="form__input" type="text" name="cardnumber" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
+          <label class="form__label" for="cardholder">
+            <span>Cardholder Name</span>  
+            <input type="text" name="cardholder" id="cardholder" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
+          </label>
+          <label class="form__label" for="cardnumber">
+            <span>Card Number</span> 
+            <input type="text" name="cardnumber" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
+          </label>
           <div class="form__date--cvc">
-            <label class="form__label" for="cardmonth">Exp. Date (MM/YY)</label>
-            <label class="form__label" for="cardcvc">CVC</label>
-            <div class="form__date">
-              <input class="form__input" type="text" maxlength="2" name="cardmonth" id="cardmonth" placeholder="MM" autocomplete="bday-month" required>
-              <input class="form__input" type="text" maxlength="2" name="cardyear" id="cardyear" placeholder="YY" autocomplete="bday-year" required>
-              <input class="form__input" type="text" maxlength="3" name="cardcvc" id="cardcvc" placeholder="e.g. 123" autocomplete="cc-number" required>
-            </div>
+            <label class="form__label" for="cardmonth">
+              <span>Exp. Date (MM/YY)</span>
+              <div class="date">
+                <input class="form__label--input" type="text" maxlength="2" name="cardmonth" id="cardmonth" placeholder="MM" autocomplete="bday-month" required>
+                <input class="form__label--input" type="text" maxlength="2" name="cardyear" id="cardyear" placeholder="YY" autocomplete="bday-year" required>
+              </div>
+            </label>
+            <label class="form__label" for="cardcvc">
+              <span>CVC</span>
+              <input class="form__label--input" type="text" maxlength="3" name="cardcvc" id="cardcvc" placeholder="e.g. 123" autocomplete="cc-number" required>
+            </label>
           </div>
-          <button class="form__submit">
+          <button type="submit" class="form__submit">
             Confirm
           </button>
         </form>
         <section class="completed">
-          <img class="completed__img" src="./public/icon-complete.svg" alt="complete icon">
+          <img class="completed__img" src="./icon-complete.svg" alt="complete icon">
           <h2 class="completed__title">Thank you!</h2>
           <p class="completed__mjs">We've added your card details</p>
           <button class="completed_button">Continue</button>

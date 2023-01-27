@@ -1,6 +1,4 @@
 
-@use './public/components/_global';
-@use './public//components/_card-top';
-@use './public/components/_card-buttom';
+@forward './public/components/';
 
 
