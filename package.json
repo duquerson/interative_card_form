@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "sass": "^1.57.1",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "super-expressive": "^1.4.2"
   },
   "main": "main.js",
   "author": "Duquerson",
   "license": "MIT",
-  "description": "interactive card"
+  "description": "interactive card",
+  "dependencies": {
+  }
 }
