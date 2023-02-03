@@ -1,0 +1,78 @@
+//desktop views
+
+@media (min-width: 1440px) {
+    body{
+        align-items: normal;
+    }
+};
+
+
+.container{
+    &__card--top{
+        .card__front{
+            @media (min-width: 1440px) {
+                width: 450px;
+                height: 247px;
+                padding: 30px;
+                top: 120px;
+                left: 167px;
+            }
+            
+            @media (min-width: 1440px) {
+                &--logo{
+                    img{
+                        width: 88px;
+                        height: 50px;
+                    }
+                    width: 86px;
+                    margin-bottom: 55px;
+                }
+                &--number{
+                    font-size: 1.6em;
+                    margin-bottom: 25px;
+                }
+                &--details{
+                    font-size: 0.8em;
+                }
+            }
+        }
+
+        .card__back{
+            
+            @media (min-width: 1440px) {
+                width: 450px;
+                height: 247px;
+                padding: 30px;
+                top: 382px;
+                left: 257px;
+            }
+            &--cvc{
+                @media (min-width: 1440px) {
+                    font-size: 1.6rem;
+                    margin-top: 80px;
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+    
+    @media (min-width: 1440px) {
+        width: 1440px;
+        display: flex;
+        &__card--top{
+            background: url('../images/bg-main-desktop.png') no-repeat;
+            height: 900px;
+            width: 900px;
+        }
+        
+    }
+}
+
+    
+
+
+
+
+
+
+
