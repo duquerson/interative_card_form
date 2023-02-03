@@ -7,6 +7,7 @@
     <meta name="robots" content="index,follow">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./desktop.scss" media="screen and (min-width: 1440px)"> -->
   </head>
   <body>
     <main class="container">
@@ -30,7 +31,7 @@
       </section>
       <!-- formulario -->
       <section class="container__card--buttom">
-        <form class="form">
+        <form class="form" enctype="multipart/form-data">
           <label class="form__label" for="cardholder">
             <span>Cardholder Name</span>  
             <input type="text" name="cardholder" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
@@ -73,6 +74,6 @@
         </section>
       </section>
     </main>
-    <script defer type="module" src="/main.js"></script>
   </body>
+  <script defer type="module" src="/main.js"></script>
 </html>

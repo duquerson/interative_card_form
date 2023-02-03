@@ -32,13 +32,7 @@ body{
             background-size: contain;
             z-index: 1;
             box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-            @media (min-width: 1440px) {
-                width: 450px;
-                height: 247px;
-                padding: 30px;
-                top: 120px;
-                left: 167px;
-            }
+            
             &--logo{
                 img{
                     width: 55px;
@@ -62,23 +56,7 @@ body{
                     font-weight:normal;
                 }
             }
-            @media (min-width: 1440px) {
-                &--logo{
-                    img{
-                        width: 88px;
-                        height: 50px;
-                    }
-                    width: 86px;
-                    margin-bottom: 55px;
-                }
-                &--number{
-                    font-size: 1.6em;
-                    margin-bottom: 25px;
-                }
-                &--details{
-                    font-size: 0.8em;
-                }
-            }
+            
         }
 
         .card__back{
@@ -93,23 +71,13 @@ body{
             color: var(--color-white);
             background: url('../images/bg-card-back1.png') no-repeat; 
             background-size: contain;
-            @media (min-width: 1440px) {
-                width: 450px;
-                height: 247px;
-                padding: 30px;
-                top: 382px;
-                left: 257px;
-            }
+            
             &--cvc{
                 font-weight: normal;
                 margin-top: 50px;
                 text-align: right;
                 padding-right: 12px;
-                @media (min-width: 1440px) {
-                    font-size: 1.6rem;
-                    margin-top: 80px;
-                    padding-right: 30px;
-                }
+                
             }
         }
     }
@@ -153,6 +121,9 @@ body{
                     font-size: 1rem;
                 }
                 .errorNumber{
+                    @extend .errorName;
+                }
+                .errorDate{
                     @extend .errorName;
                 }
                 .cardholder{
@@ -224,16 +195,7 @@ body{
             @extend .form__submit;
         }
     }
-    @media (min-width: 1440px) {
-        width: 1440px;
-        display: flex;
-        &__card--top{
-            background: url('../images/bg-main-desktop.png') no-repeat;
-            height: 900px;
-            width: 900px;
-        }
-        
-    }
+    
 }
 
     
