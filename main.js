@@ -57,27 +57,29 @@ numberInput.addEventListener('input',(event)=>{
 //mes tarjeta
 
 let cardmonth = document.querySelector('.card__month');
-let inputmonth = document.querySelector('.form__label--input');
-let montherror = document.querySelector('.errorDate');
+let inputmonth = document.querySelector('#cardmonth');
+let montherror = document.querySelector('.errorMonth');
 
 //regex y manejador de eventos
 
 inputmonth.addEventListener('input', ()=>{
-    (inputmonth.value === '')?
-        cardmonth.textContent = '00':
-        cardmonth.textContent = inputmonth.value;
-        
-    if(inputmonth.value.match(number) !== null){
+    (inputmonth.value === '')? cardmonth.textContent = '00' : cardmonth.textContent = inputmonth.value;
+    if(inputmonth.value.match(caracteres) !== null){
         montherror.textContent = 'Wrong format';
         inputmonth.classList.add('cardholder');
-        inputmonth.classList.remove('error');
+        montherror.classList.remove('error');
     }else{
         inputmonth.classList.remove('cardholder');
-        inputmonth.classList.add('error');
+        montherror.classList.add('error');
     }
+});
 
+//año tarjeta
 
+let cardyear = document.querySelector('.card__year');
+let inputCard = document.querySelector('#cardyear');
+let errorYear = document.querySelector('.errorYear');
 
-
-
+inputCard.addEventListener('input', ()=>{
+    
 });

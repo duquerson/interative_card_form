@@ -48,12 +48,14 @@
               <div class="date">
                 <label for="cardmonth">
                   <input class="form__label--input" type="text" maxlength="2" name="cardmonth" id="cardmonth" placeholder="MM" autocomplete="bday-month" required>
+                  <div class="errorMonth error"></div>
                 </label>
                 <label for="cardyear">
                   <input class="form__label--input" type="text" maxlength="2" name="cardyear" id="cardyear" placeholder="YY" autocomplete="bday-year" required>
+                  <div class="errorYear error"></div>
                 </label>
               </div>
-              <div class="errorDate error"></div>
+              
             </div>
             <label class="form__label" for="cardcvc">
               <span>CVC</span>
@@ -75,5 +77,5 @@
       </section>
     </main>
   </body>
-  <script defer type="module" src="/main.js"></script>
+  <script async type="module" src="/main.js"></script>
 </html>

@@ -114,6 +114,9 @@ body{
                 .error{
                     display: none;
                 }
+                .cardholder{
+                    border: 1px solid var(--color-red);
+                }
                 .errorName{
                     color: var(--color-red);
                     text-transform: none;
@@ -123,11 +126,8 @@ body{
                 .errorNumber{
                     @extend .errorName;
                 }
-                .errorDate{
-                    @extend .errorName;
-                }
-                .cardholder{
-                    border: 1px solid var(--color-red);
+                .errorMonth{
+                    @extend .errorNumber;
                 }
             }
             
