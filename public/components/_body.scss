@@ -129,6 +129,9 @@ body{
                 .errorMonth{
                     @extend .errorNumber;
                 }
+                .errorCvc{
+                    @extend .errorMonth;
+                }
             }
             
             

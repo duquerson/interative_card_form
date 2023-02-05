@@ -81,5 +81,32 @@ let inputCard = document.querySelector('#cardyear');
 let errorYear = document.querySelector('.errorYear');
 
 inputCard.addEventListener('input', ()=>{
-    
+    (inputCard.value === '')? cardyear.textContent = '00' : cardyear.textContent = inputCard.value;
+    if(inputCard.value.match(caracteres) !== null){
+        errorYear.textContent = 'Wrong format';
+        inputCard.classList.add('cardholder');
+        errorYear.classList.remove('error');
+    }else{
+        inputCard.classList.remove('cardholder');
+        errorYear.classList.add('error');
+    }
+});
+
+
+//cvc tarjeta
+
+let cvc_Card = document.querySelector('.card__back--cvc');
+let input_Cvc = document.querySelector('#cardcvc');
+let error_Cvc = document.querySelector('.errorCvc');
+
+input_Cvc.addEventListener('input',()=>{
+    (input_Cvc.value === '')? cvc_Card.textContent = '000' : cvc_Card.textContent = input_Cvc.value;
+    if(input_Cvc.value.match(caracteres) !== null){
+        error_Cvc.textContent = 'Wrong format';
+        input_Cvc.classList.add('cardholder');
+        error_Cvc.classList.remove('error');
+    }else{
+        input_Cvc.classList.remove('cardholder');
+        error_Cvc.classList.add('error');
+    }
 });
