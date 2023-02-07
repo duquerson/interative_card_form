@@ -31,35 +31,35 @@
       </section>
       <!-- formulario -->
       <section class="container__card--buttom">
-        <form class="form" enctype="multipart/form-data">
-          <label class="form__label" for="cardholder">
+        <form class="form" >
+          <label class="form__label" for="name">
             <span>Cardholder Name</span>  
-            <input type="text" name="cardholder" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
+            <input type="text" name="name" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
             <div class="errorName error"></div>
           </label>
-          <label class="form__label" for="cardnumber">
+          <label class="form__label" for="number">
             <span>Card Number</span> 
-            <input type="text" name="cardnumber" id="cardnumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
+            <input type="text" name="number" id="cardnumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
             <div class="errorNumber error"></div>
           </label>
           <div class="form__date--cvc">
             <div class="form__label">
               <span>Exp. Date (MM/YY)</span>
               <div class="date">
-                <label for="cardmonth">
-                  <input class="form__label--input" type="text" maxlength="2" name="cardmonth" id="cardmonth" placeholder="MM" autocomplete="bday-month" required>
+                <label for="month">
+                  <input class="form__label--input" type="text" maxlength="2" name="month" id="cardmonth" placeholder="MM"  required>
                   <div class="errorMonth error"></div>
                 </label>
-                <label for="cardyear">
-                  <input class="form__label--input" type="text" maxlength="2" name="cardyear" id="cardyear" placeholder="YY" autocomplete="bday-year" required>
+                <label for="year">
+                  <input class="form__label--input" type="text" maxlength="2" name="year" id="cardyear" placeholder="YY"  required>
                   <div class="errorYear error"></div>
                 </label>
               </div>
               
             </div>
-            <label class="form__label" for="cardcvc">
+            <label class="form__label" for="cvc">
               <span>CVC</span>
-              <input class="form__label--input" type="text" maxlength="3" name="cardcvc" id="cardcvc" placeholder="e.g. 123" autocomplete="cc-number" required>
+              <input class="form__label--input" type="text" maxlength="3" name="cvc" id="cardcvc" placeholder="e.g. 123"  required>
               <div class="errorCvc error"></div>
             </label>
           </div>

@@ -129,8 +129,11 @@ body{
                 .errorMonth{
                     @extend .errorNumber;
                 }
-                .errorCvc{
+                .errorYear{
                     @extend .errorMonth;
+                }
+                .errorCvc{
+                    @extend .errorYear;
                 }
             }
             
