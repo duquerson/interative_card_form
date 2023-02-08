@@ -119,74 +119,84 @@ input_Cvc.addEventListener('input',()=>{
 let confirm = document.querySelector('.form__submit');
 let form = document.querySelector('.form');
 let gracias = document.querySelector('.completed');
-let correct = true;
+let correctname = true;
+let correctnumber = true;
+let correctmes = true;
+let correctano = true;
+let correctcvc = true;
 
-confirm.addEventListener('click', ()=>{
-    
+confirm.addEventListener('click', (event)=>{
+    event.preventDefault();
     //validando nombre
     if(nameInput.value === ''){
         nameError.textContent = `Can't be blank`;
         nameInput.classList.add('cardholder');
         nameError.classList.remove('error');
-        correct = false;
+        correctname = false;
     }
+    
     //validando numero
     if(numberInput.value === ''){
         numberError.textContent = `Can't be blank`;
         numberInput.classList.add('cardholder');
         numberError.classList.remove('error');
-        correct = false;
+        correctnumber = false;
     }
-    if(parseInt(numberInput.value) === 0 || parseInt(numberInput.value) < 19){
+    if(numberInput.value.length < 19){
         numberError.textContent = 'Wrong number';
         numberInput.classList.add('cardholder');
         numberError.classList.remove('error');
+        correctnumber = false;
     }
     //valido mes
     if(parseInt(inputmonth.value) === 0 || parseInt(inputmonth.value) > 12){
         montherror.textContent = 'Wrong Month';
         inputmonth.classList.add('cardholder');
         montherror.classList.remove('error');
+        correctmes=false;
     }
     if(inputmonth.value=== ''){
         montherror.textContent = `Can't be blank`;
         inputmonth.classList.add('cardholder');
         montherror.classList.remove('error');
-        correct = false;
+        correctmes = false;
     }
     //valido año
     if(parseInt(inputCard.value)<23 || parseInt(inputCard.value)>=28){
         errorYear.textContent = 'Wrong year';
         inputCard.classList.add('cardholder');
         errorYear.classList.remove('error');
+        correctano = false;
     }
     if(parseInt(inputCard.value) === 0) {
         errorYear.textContent = 'Wrong year';
         inputCard.classList.add('cardholder');
         errorYear.classList.remove('error');
+        correctano = false;
     }
     if(inputCard.value === ''){
         errorYear.textContent = `Can't be blank`;
         inputCard.classList.add('cardholder');
         errorYear.classList.remove('error');
-        correct = false;
+        correctano = false;
     }
     //valido cvc
-    if(parseInt(input_Cvc.value)===0){
+    if(parseInt(input_Cvc.value)===0 || parseInt(input_Cvc.value) <= 3){
         error_Cvc.textContent = 'Wrong CVC';
         input_Cvc.classList.add('cardholder');
         error_Cvc.classList.remove('error');
+        correctcvc = false;
     }
     if(input_Cvc.value === ''){
         error_Cvc.textContent = `Can't be blank`;
         input_Cvc.classList.add('cardholder');
         error_Cvc.classList.remove('error');
-        correct = false;
+        correctcvc = false;
     }
     
     //validar boton
 
-    if(correct){
+    if(correctano === true && correctcvc === true && correctmes === true && correctname === true && correctnumber === true){
         form.style.display = 'none';
         gracias.style.display= 'block';
     }

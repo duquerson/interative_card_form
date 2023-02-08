@@ -176,7 +176,8 @@ body{
     }
     .completed{
         display: none;
-        width: 100px;
+        margin: 0 auto;
+        width: 220px;
         text-align: center;
         &__img{
             display: block;
