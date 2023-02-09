@@ -31,7 +31,7 @@
       </section>
       <!-- formulario -->
       <section class="container__card--buttom">
-        <form class="form" >
+        <form class="form" method="POST">
           <label class="form__label" for="name">
             <span>Cardholder Name</span>  
             <input type="text" name="name" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
@@ -72,7 +72,7 @@
           <img class="completed__img" src="./icon-complete.svg" alt="complete icon">
           <h2 class="completed__title">Thank you!</h2>
           <p class="completed__mjs">We've added your card details</p>
-          <button class="completed__button">Continue</button>
+          <button onclick="location.href='/'" class="completed__button">Continue</button>
         </section>
       </section>
     </main>
