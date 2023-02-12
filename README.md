@@ -52,10 +52,10 @@ Your users should be able to:
 ![preview Desktop](./design/desktop-design.jpg)
 
 
-![preview Mobile](./Design/mobile-design.jpg)
+![preview Mobile](./design/mobile-design.jpg)
 ### Links
 
-- Solution : [here](https://github.com/duquerson/)
+- Solution : [here](https://github.com/duquerson/interative_card_form)
 - Live Site : [here]()
 
 ## My process
