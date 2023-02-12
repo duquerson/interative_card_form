@@ -1,25 +1,29 @@
 import './style.scss';
 import './desktop.scss';
-import './nodos.js';
 import SuperExpressive from 'super-expressive';
 
+import * as nodo from './nodos.js';
 
 //regex y manejador de eventos
 
 let number = SuperExpressive().allowMultipleMatches.digit.toRegex();
+let correctname = true;
+let correctnumber = true;
+let correctmes = true;
+let correctano = true;
+let correctcvc = true;
 
-
-nameInput.addEventListener('input', ()=>{
-    (nameInput.value=== '')?
-        nameCard.textContent = 'JANE APPLESEED'
-        : nameCard.textContent = nameInput.value;
-    if(nameInput.value.match(number) !== null){
-        nameError.textContent = 'Wrong format, characters only';
-        nameInput.classList.add('cardholder');
-        nameError.classList.remove('error');     
+nodo.nameInput.addEventListener('input', ()=>{
+    (nodo.nameInput.value=== '')?
+        nodo.nameCard.textContent = 'JANE APPLESEED'
+        : nodo.nameCard.textContent = nodo.nameInput.value;
+    if(nodo.nameInput.value.match(number) !== null){
+        nodo.nameError.textContent = 'Wrong format, characters only';
+        nodo.nameInput.classList.add('cardholder');
+        nodo.nameError.classList.remove('error');     
     }else{
-        nameInput.classList.remove('cardholder');
-        nameError.classList.add('error');
+        nodo.nameInput.classList.remove('cardholder');
+        nodo.nameError.classList.add('error');
     }
 });
 
@@ -31,63 +35,63 @@ let caracteres = /[A-z]/g;
 let add = /([0-9]{4})/g; //grupo de 4 numeros 
 let space = SuperExpressive().whitespaceChar.allowMultipleMatches.toRegex();
 
-numberInput.addEventListener('input',(event)=>{
+nodo.numberInput.addEventListener('input',(event)=>{
     let input = event.target.value;//seleciono texto escrito
     
-    if(numberInput.value.match(caracteres) !== null){
-        numberError.textContent = 'Wrong format, numbers only';
-        numberInput.classList.add('cardholder');
-        numberError.classList.remove('error');
+    if(nodo.numberInput.value.match(caracteres) !== null){
+        nodo.numberError.textContent = 'Wrong format, numbers only';
+        nodo.numberInput.classList.add('cardholder');
+        nodo.numberError.classList.remove('error');
     }else{
-        numberInput.value = input.replace(space, '').replace(add, '$1 ').trim();//$1 es la subcadana representada en el regex 
-        numberInput.classList.remove('cardholder');
-        numberError.classList.add('error');
+        nodo.numberInput.value = input.replace(space, '').replace(add, '$1 ').trim();//$1 es la subcadana representada en el regex 
+        nodo.numberInput.classList.remove('cardholder');
+        nodo.numberError.classList.add('error');
     }
-    (numberInput.value === '')? numberCard.textContent = '0000 0000 0000 0000': numberCard.textContent = numberInput.value;
+    (nodo.numberInput.value === '')? nodo.numberCard.textContent = '0000 0000 0000 0000': nodo.numberCard.textContent = nodo.numberInput.value;
 });
 
 
 
 //regex y manejador de eventos
 
-inputmonth.addEventListener('input', ()=>{
-    (inputmonth.value === '')? cardmonth.textContent = '00' : cardmonth.textContent = inputmonth.value;
-    if(inputmonth.value.match(caracteres) !== null){
-        montherror.textContent = 'Wrong format';
-        inputmonth.classList.add('cardholder');
-        montherror.classList.remove('error');
+nodo.inputmonth.addEventListener('input', ()=>{
+    (nodo.inputmonth.value === '')? nodo.cardmonth.textContent = '00' : nodo.cardmonth.textContent = nodo.inputmonth.value;
+    if(nodo.inputmonth.value.match(caracteres) !== null){
+        nodo.montherror.textContent = 'Wrong format';
+        nodo.inputmonth.classList.add('cardholder');
+        nodo.montherror.classList.remove('error');
     }else{
-        inputmonth.classList.remove('cardholder');
-        montherror.classList.add('error');
+        nodo.inputmonth.classList.remove('cardholder');
+        nodo.montherror.classList.add('error');
     }
 });
 
 
 
-inputCard.addEventListener('input', ()=>{
-    (inputCard.value === '')? cardyear.textContent = '00' : cardyear.textContent = inputCard.value;
-    if(inputCard.value.match(caracteres) !== null){
-        errorYear.textContent = 'Wrong format';
-        inputCard.classList.add('cardholder');
-        errorYear.classList.remove('error');
+nodo.inputCard.addEventListener('input', ()=>{
+    (nodo.inputCard.value === '')? nodo.cardyear.textContent = '00' : nodo.cardyear.textContent = nodo.inputCard.value;
+    if(nodo.inputCard.value.match(caracteres) !== null){
+        nodo.errorYear.textContent = 'Wrong format';
+        nodo.inputCard.classList.add('cardholder');
+        nodo.errorYear.classList.remove('error');
     }else{
-        inputCard.classList.remove('cardholder');
-        errorYear.classList.add('error');
+        nodo.inputCard.classList.remove('cardholder');
+        nodo.errorYear.classList.add('error');
     }
 });
 
 
 
 
-input_Cvc.addEventListener('input',()=>{
-    (input_Cvc.value === '')? cvc_Card.textContent = '000' : cvc_Card.textContent = input_Cvc.value;
-    if(input_Cvc.value.match(caracteres) !== null){
-        error_Cvc.textContent = 'Wrong format';
-        input_Cvc.classList.add('cardholder');
-        error_Cvc.classList.remove('error');
+nodo.input_Cvc.addEventListener('input',()=>{
+    (nodo.input_Cvc.value === '')? nodo.cvc_Card.textContent = '000' : nodo.cvc_Card.textContent = nodo.input_Cvc.value;
+    if(nodo.input_Cvc.value.match(caracteres) !== null){
+        nodo.error_Cvc.textContent = 'Wrong format';
+        nodo.input_Cvc.classList.add('cardholder');
+        nodo.error_Cvc.classList.remove('error');
     }else{
-        input_Cvc.classList.remove('cardholder');
-        error_Cvc.classList.add('error');
+        nodo.input_Cvc.classList.remove('cardholder');
+        nodo.error_Cvc.classList.add('error');
     }
 });
 
@@ -96,79 +100,79 @@ input_Cvc.addEventListener('input',()=>{
 
 
 
-confirm.addEventListener('click', (event)=>{
+nodo.confirm.addEventListener('click', (event)=>{
     event.preventDefault();
     //validando nombre
-    if(nameInput.value=== '' ){
-        nameError.textContent = `Can't be blank`;
-        nameInput.classList.add('cardholder');
-        nameError.classList.remove('error');
+    if(nodo.nameInput.value=== '' ){
+        nodo.nameError.textContent = `Can't be blank`;
+        nodo.nameInput.classList.add('cardholder');
+        nodo.nameError.classList.remove('error');
         correctname = false;
     }
     
     //validando numero
-    if(numberInput.value === ''){
-        numberError.textContent = `Can't be blank`;
-        numberInput.classList.add('cardholder');
-        numberError.classList.remove('error');
+    if(nodo.numberInput.value === ''){
+        nodo.numberError.textContent = `Can't be blank`;
+        nodo.numberInput.classList.add('cardholder');
+        nodo.numberError.classList.remove('error');
         correctnumber = false;
-    }else if(numberInput.value.length < 19){
-        numberError.textContent = 'Wrong number';
-        numberInput.classList.add('cardholder');
-        numberError.classList.remove('error');
+    }else if(nodo.numberInput.value.length < 19){
+        nodo.numberError.textContent = 'Wrong number';
+        nodo.numberInput.classList.add('cardholder');
+        nodo.numberError.classList.remove('error');
         correctnumber = false;
     }
     //valido mes
-    if(parseInt(inputmonth.value) === 0 || parseInt(inputmonth.value) > 12){
-        montherror.textContent = 'Wrong Month';
-        inputmonth.classList.add('cardholder');
-        montherror.classList.remove('error');
+    if(parseInt(nodo.inputmonth.value) === 0 || parseInt(nodo.inputmonth.value) > 12){
+        nodo.montherror.textContent = 'Wrong Month';
+        nodo.inputmonth.classList.add('cardholder');
+        nodo.montherror.classList.remove('error');
         correctmes=false;
     }
-    if(inputmonth.value=== ''){
-        montherror.textContent = `Can't be blank`;
-        inputmonth.classList.add('cardholder');
-        montherror.classList.remove('error');
+    if(nodo.inputmonth.value=== ''){
+        nodo.montherror.textContent = `Can't be blank`;
+        nodo.inputmonth.classList.add('cardholder');
+        nodo.montherror.classList.remove('error');
         correctmes = false;
     }
     //valido año
-    if(parseInt(inputCard.value)<23 || parseInt(inputCard.value)>=28){
-        errorYear.textContent = 'Wrong year';
-        inputCard.classList.add('cardholder');
-        errorYear.classList.remove('error');
+    if(parseInt(nodo.inputCard.value)<23 || parseInt(nodo.inputCard.value)>=28){
+        nodo.errorYear.textContent = 'Wrong year';
+        nodo.inputCard.classList.add('cardholder');
+        nodo.errorYear.classList.remove('error');
         correctano = false;
     }
-    if(parseInt(inputCard.value) === 0) {
-        errorYear.textContent = 'Wrong year';
-        inputCard.classList.add('cardholder');
-        errorYear.classList.remove('error');
+    if(parseInt(nodo.inputCard.value) === 0) {
+        nodo.errorYear.textContent = 'Wrong year';
+        nodo.inputCard.classList.add('cardholder');
+        nodo.errorYear.classList.remove('error');
         correctano = false;
     }
-    if(inputCard.value === ''){
-        errorYear.textContent = `Can't be blank`;
-        inputCard.classList.add('cardholder');
-        errorYear.classList.remove('error');
+    if(nodo.inputCard.value === ''){
+        nodo.errorYear.textContent = `Can't be blank`;
+        nodo.inputCard.classList.add('cardholder');
+        nodo.errorYear.classList.remove('error');
         correctano = false;
     }
     //valido cvc
-    if(parseInt(input_Cvc.value)===0 || parseInt(input_Cvc.value) <= 3){
-        error_Cvc.textContent = 'Wrong CVC';
-        input_Cvc.classList.add('cardholder');
-        error_Cvc.classList.remove('error');
+    if(parseInt(nodo.input_Cvc.value)===0 || parseInt(nodo.input_Cvc.value) <= 3){
+        nodo.error_Cvc.textContent = 'Wrong CVC';
+        nodo.input_Cvc.classList.add('cardholder');
+        nodo.error_Cvc.classList.remove('error');
         correctcvc = false;
     }
-    if(input_Cvc.value === ''){
-        error_Cvc.textContent = `Can't be blank`;
-        input_Cvc.classList.add('cardholder');
-        error_Cvc.classList.remove('error');
+    if(nodo.input_Cvc.value === ''){
+        nodo.error_Cvc.textContent = `Can't be blank`;
+        nodo.input_Cvc.classList.add('cardholder');
+        nodo.error_Cvc.classList.remove('error');
         correctcvc = false;
     }
     
     //validar boton
 
     if(correctano === true && correctcvc === true && correctmes === true && correctname === true && correctnumber === true){
-        form.style.display = 'none';
-        gracias.style.display= 'block';
+        nodo.form.style.display = 'none';
+        nodo.gracias.style.display= 'block';
     }
 
 });

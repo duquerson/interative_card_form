@@ -72,8 +72,18 @@
     }
 }
 
-    
-
+@media (min-width: 1440px) {    
+    .Autor {
+        margin: 0 auto;
+        text-align: center;
+        .Autor__Titulo {
+            a{
+                text-decoration: none;
+                color: var(--color-lineal-gradeint-purple);
+            }
+        }
+    }
+}
 
 
 
