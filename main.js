@@ -172,7 +172,9 @@ nodo.confirm.addEventListener('click', (event)=>{
 
     if(correctano === true && correctcvc === true && correctmes === true && correctname === true && correctnumber === true){
         nodo.form.style.display = 'none';
+        console.log(nodo.form.style.display);
         nodo.gracias.style.display= 'block';
+        console.log(nodo.gracias.style.display);
     }
 
 });
