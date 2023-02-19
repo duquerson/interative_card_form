@@ -132,7 +132,7 @@ nodo.confirm.addEventListener('click', (event)=>{
     blank(inputCard, errorYear);
     
     //valido cvc
-    if(parseInt(input_Cvc.value)===0 || parseInt(input_Cvc.value) <= 3){
+    if(parseInt(input_Cvc.value)===0 || input_Cvc.value.length < 3){
         error_Cvc.textContent = 'Wrong CVC';
         input_Cvc.classList.add('cardholder');
         error_Cvc.classList.remove('error');
