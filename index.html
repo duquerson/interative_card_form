@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Frontend Mentor | Interactive card details form</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <meta name="robots" content="index,follow">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./desktop.scss" media="screen and (min-width: 1440px)"> -->
   </head>
@@ -32,12 +32,12 @@
       <!-- formulario -->
       <section class="container__card--buttom">
         <form class="form" method="POST">
-          <label class="form__label" for="name">
+          <label class="form__label" for="cardholder">
             <span>Cardholder Name</span>  
             <input type="text" name="name" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
             <div class="errorName error"></div>
           </label>
-          <label class="form__label" for="number">
+          <label class="form__label" for="cardnumber">
             <span>Card Number</span> 
             <input type="text" name="number" id="cardnumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
             <div class="errorNumber error"></div>
@@ -46,18 +46,18 @@
             <div class="form__label">
               <span>Exp. Date (MM/YY)</span>
               <div class="date">
-                <label for="month">
+                <label for="cardmonth">
                   <input class="form__label--input" type="text" maxlength="2" name="month" id="cardmonth" placeholder="MM"  required>
                   <div class="errorMonth error"></div>
                 </label>
-                <label for="year">
+                <label for="cardyear">
                   <input class="form__label--input" type="text" maxlength="2" name="year" id="cardyear" placeholder="YY"  required>
                   <div class="errorYear error"></div>
                 </label>
               </div>
               
             </div>
-            <label class="form__label" for="cvc">
+            <label class="form__label" for="cardcvc">
               <span>CVC</span>
               <input class="form__label--input" type="text" maxlength="3" name="cvc" id="cardcvc" placeholder="e.g. 123"  required>
               <div class="errorCvc error"></div>
@@ -72,7 +72,7 @@
           <img class="completed__img" src="./icon-complete.svg" alt="complete icon">
           <h2 class="completed__title">Thank you!</h2>
           <p class="completed__mjs">We've added your card details</p>
-          <button onclick="location.href='/'" class="completed__button">Continue</button>
+          <button type="button" onclick="location.href='/'" class="completed__button">Continue</button>
         </section>
       </section>
     </main>

@@ -3,6 +3,16 @@
 @media (min-width: 1440px) {
     body{
         align-items: normal;
+        .Autor {
+            margin: 0 auto;
+            text-align: center;
+            &__Titulo {
+                a{
+                    text-decoration: none;
+                    color: var(--color-lineal-gradeint-purple);
+                }
+            }
+        }
     }
 };
 
@@ -72,18 +82,7 @@
     }
 }
 
-@media (min-width: 1440px) {    
-    .Autor {
-        margin: 0 auto;
-        text-align: center;
-        .Autor__Titulo {
-            a{
-                text-decoration: none;
-                color: var(--color-lineal-gradeint-purple);
-            }
-        }
-    }
-}
+
 
 
 
