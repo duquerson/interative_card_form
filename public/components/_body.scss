@@ -14,7 +14,7 @@ body{
         min-width: 320px;
         max-height: 704px;
     &__card--top{
-        background: url('../images/bg-main-mobile.png');
+        background: url('./public/images/bg-main-mobile.png');
         background-repeat: repeat;
         height: 240px;
         position: relative;
@@ -28,7 +28,7 @@ body{
             left: 18px;
             letter-spacing: 1.6px;
             color: var(--color-white);
-            background: url('../images/bg-card-front1.png') no-repeat; 
+            background: url('./public/images/bg-card-front1.png') no-repeat; 
             background-size: contain;
             z-index: 1;
             box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -69,7 +69,7 @@ body{
             letter-spacing: 1.6px;
             font-size: 1rem;
             color: var(--color-white);
-            background: url('../images/bg-card-back1.png') no-repeat; 
+            background: url('./public/images/bg-card-back1.png') no-repeat; 
             background-size: contain;
             
             &--cvc{

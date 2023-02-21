@@ -1,11 +1,10 @@
 import './style.scss';
 import './desktop.scss';
 import SuperExpressive from 'super-expressive';
-import * as nodo from './nodos.js';
+import {nameCard, nameInput, nameError, numberCard, numberInput, numberError, cardmonth, inputmonth, montherror, cardyear, inputCard, errorYear, cvc_Card, input_Cvc, error_Cvc, confirm, form, gracias} from './nodos.js';
 
 //_______________________________________________________________________________________________________________________________________
 
-const {nameCard, nameInput, nameError, numberCard, numberInput, numberError, cardmonth, inputmonth, montherror, cardyear, inputCard, errorYear, cvc_Card, input_Cvc, error_Cvc, confirm, form, gracias} = nodo;
 
 //regex y manejador de eventos
 
@@ -87,22 +86,22 @@ input_Cvc.addEventListener('input',()=>{
 
 
 
-nodo.confirm.addEventListener('click', (event)=>{
+confirm.addEventListener('click', (event)=>{
     event.preventDefault();
     //validando nombre
 
-    let name = nodo.nameInput.value;
-    let numero = nodo.numberInput.value;
-    let month = nodo.inputmonth.value;
-    let year = nodo.inputCard.value;
-    let cvc = nodo.input_Cvc.value;
+    let name = nameInput.value;
+    let numero = numberInput.value;
+    let month = inputmonth.value;
+    let year = inputCard.value;
+    let cvc = input_Cvc.value;
 
     blank(nameInput, nameError);
     
     //validando numero
     blank(numberInput, numberError);
     
-    if(numberInput.value.length < 19){
+    if(numberInput.value.length > 0 && numberInput.value.length < 19){
         numberError.textContent = 'Wrong number';
         numberInput.classList.add('cardholder');
         numberError.classList.remove('error');
@@ -145,7 +144,7 @@ nodo.confirm.addEventListener('click', (event)=>{
     
     if(name && numero && month && year && cvc ){
         form.style.display = 'none';
-        nodo.gracias.style.display= 'block';
+        gracias.style.display= 'block';
     }
 
 });

@@ -36,7 +36,7 @@ export let gracias = document.querySelector('.completed');
 
 
 
-export * as nodo from './nodos.js';
+export * from './nodos.js';
 
 
 
