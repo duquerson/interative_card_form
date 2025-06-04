@@ -8,7 +8,7 @@ import {nameCard, nameInput, nameError, numberCard, numberInput, numberError, ca
 
 //regex y manejador de eventos
 
-let caracteres = /[A-z]/g;
+let caracteres = /[A-Za-z]/g;
 let add = /([0-9]{4})/g; //grupo de 4 numeros 
 let space = SuperExpressive().whitespaceChar.allowMultipleMatches.toRegex();
 let number = SuperExpressive().allowMultipleMatches.digit.toRegex();
@@ -26,11 +26,14 @@ const format = (input, error, key, message)=>{
 };
 
 const blank = (input, error) =>{
-    if(input.value=== '' ){
+    if (input.value === '') {
         error.textContent = `Can't be blank`;
         input.classList.add('cardholder');
         error.classList.remove('error');
-    }
+    } else {
+        input.classList.remove('cardholder');
+        error.classList.add('error');
+}
 };
 
 //el nombre input
@@ -39,21 +42,21 @@ nameInput.addEventListener('input', ()=>{
     (nameInput.value=== '')?
         nameCard.textContent = 'JANE APPLESEED'
         : nameCard.textContent = nameInput.value;
-    format(nameInput, nameError, number, 'characters only');
+    format(nameInput, nameError, /\d/g, 'letters only');
 });
 
 
 //el number input
 
 numberInput.addEventListener('input',(event)=>{
-    let input = event.target.value;//seleciono texto escrito
+    let input = event.target.value.replace(/\D/g, '').slice(0, 16);//seleciono texto escrito
     
     if(numberInput.value.match(caracteres) !== null){
         numberError.textContent = 'Wrong format, numbers only';
         numberInput.classList.add('cardholder');
         numberError.classList.remove('error');
     }else{
-        numberInput.value = input.replace(space, '').replace(add, '$1 ').trim();//$1 es la subcadana representada en el regex 
+        numberInput.value = input.replace(add, '$1 ').trim();//$1 es la subcadana representada en el regex 
         numberInput.classList.remove('cardholder');
         numberError.classList.add('error');
     }
@@ -101,28 +104,34 @@ confirm.addEventListener('click', (event)=>{
     //validando numero
     blank(numberInput, numberError);
     
-    if(numberInput.value.length > 0 && numberInput.value.length < 19){
-        numberError.textContent = 'Wrong number';
-        numberInput.classList.add('cardholder');
-        numberError.classList.remove('error');
-        numero = '';
-    }
+    const rawNumber = numberInput.value.replace(/\s/g, '');
+if (rawNumber.length !== 16) {
+    numberError.textContent = 'Card number must be 16 digits';
+    numberInput.classList.add('cardholder');
+    numberError.classList.remove('error');
+    numero = '';
+}
     //valido mes
-    if(parseInt(inputmonth.value) === 0 || parseInt(inputmonth.value) > 12){
+    blank(inputmonth, montherror);
+if (inputmonth.value !== '') {
+    const parsedMonth = parseInt(inputmonth.value);
+    if(Number.isNaN(parsedMonth) || parsedMonth < 1 || parsedMonth > 12){
         montherror.textContent = 'Wrong Month';
         inputmonth.classList.add('cardholder');
         montherror.classList.remove('error');
         month = '';
     }
-    blank(inputmonth, montherror);
+}
     
     //valido año
-    if(parseInt(inputCard.value)<23 || parseInt(inputCard.value)>=28){
+    const currentYear = new Date().getFullYear() % 100;
+    const parsedYear = parseInt(inputCard.value);
+if (isNaN(parsedYear) || parsedYear < currentYear || parsedYear > currentYear + 5){
         errorYear.textContent = 'Wrong year';
         inputCard.classList.add('cardholder');
         errorYear.classList.remove('error');
-        year='';
-    }else if(parseInt(inputCard.value) === 0) {
+        year = '';
+    }else if(parsedYear === 0) {
         errorYear.textContent = 'Wrong year';
         inputCard.classList.add('cardholder');
         errorYear.classList.remove('error');
@@ -131,20 +140,29 @@ confirm.addEventListener('click', (event)=>{
     blank(inputCard, errorYear);
     
     //valido cvc
-    if(parseInt(input_Cvc.value)===0 || input_Cvc.value.length < 3){
+    if(!/^\d{3}$/.test(input_Cvc.value)){
         error_Cvc.textContent = 'Wrong CVC';
         input_Cvc.classList.add('cardholder');
         error_Cvc.classList.remove('error');
-        cvc='';
+        cvc = '';
     }
     blank(input_Cvc, error_Cvc);
+    
     
 
     //validar boton
     
     if(name && numero && month && year && cvc ){
+        localStorage.setItem('formularioTarjeta', JSON.stringify({
+        nombre: nameInput.value,
+        numero: numberInput.value,
+        mes: inputmonth.value,
+        año: inputCard.value,
+        cvc: input_Cvc.value }));
         form.style.display = 'none';
         gracias.style.display= 'block';
     }
 
 });
+
+

@@ -34,12 +34,12 @@
         <form class="form" method="POST">
           <label class="form__label" for="cardholder">
             <span>Cardholder Name</span>  
-            <input type="text" name="name" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="name" required>
+            <input type="text" name="name" id="cardholder" maxlength="23" placeholder="e.g. Jane Appleseed" autocomplete="off" required>
             <div class="errorName error"></div>
           </label>
           <label class="form__label" for="cardnumber">
             <span>Card Number</span> 
-            <input type="text" name="number" id="cardnumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" required>
+            <input type="text" name="number" id="cardnumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000" autocomplete="off" required>
             <div class="errorNumber error"></div>
           </label>
           <div class="form__date--cvc">
@@ -75,6 +75,9 @@
           <button type="button" onclick="location.href='/'" class="completed__button">Continue</button>
         </section>
       </section>
+      <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">
+  <strong>Nota:</strong> Este formulario es solo una <strong>simulación</strong>. Ninguno de los datos ingresados se envía a servidores ni se comparte con terceros. Toda la información se almacena temporalmente en tu navegador de forma local y segura.
+</p>
     </main>
     <footer class="Autor">
       <p class="Autor__Titulo">Challenge by <a href="https://www.frontendmentor.io/challenges" target="_blank" rel="noreferrer">Frontend Mentor</a>.<br>
@@ -82,5 +85,5 @@
       </p>
     </footer>
   </body>
-  <script async type="module" type="module" src="./main.js"></script>
+  <script async type="module" src="./main.js"></script>
 </html>
